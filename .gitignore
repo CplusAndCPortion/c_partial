@@ -6,10 +6,6 @@
 .vscode
 *..vscode
 
-# 忽略所有没有扩展名的文件
-*
-# 但保留有扩展名的文件
-!*.*
 
 
 # Object files
