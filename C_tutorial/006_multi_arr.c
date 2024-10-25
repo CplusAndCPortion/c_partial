@@ -12,18 +12,111 @@ struct myList
     int size; // 存储块 store block 数量
 };
 
-void struct_basic_usages();
+void arr_basic_usage();
+
+void get_arr_size();
+
+void multi_dimension_arr();
 
 void custom_multi_arr();
 
+void struct_basic_usages();
 
 int main(int argc, char const *argv[])
 {
+
+    // arr_basic_usage();
+
+    // get_arr_size();
+
+    multi_dimension_arr();
+
     // struct_basic_usages();
 
-    custom_multi_arr();
+    // custom_multi_arr();
     
     return 0;
+}
+
+void multi_dimension_arr() {
+    /**
+     * NOTE:
+     *  多维数组只有第一维也即最外层的数组不需要指定容量,其他必须指定且必须用常量指定.
+     */
+    int inner_container = 3;
+    int arr[][3] = {
+        {1,2,3},
+        {4,5,6},
+    };
+
+    printf("%d",arr[1][1]);
+    // 5
+
+
+}
+
+void get_arr_size() {
+    int myArr[] = {1,2,3};
+    /**
+     * We can get the arr size via `sizeof` operator.
+     */
+
+    long unsigned int arr_size = sizeof(myArr);
+
+    printf("myArr_size == %lu \n", arr_size);
+    // myArr_size == 12 
+
+    /**
+     * NOTE:
+     * sizeof returns the size of date type.
+     * ----
+     * 1. int size is 4 bytes.
+     * 2. myArr includes 3 int types.
+     * 3. so, myArr size is 12
+     */
+
+    // we can caculate the number of arr.
+    int number = sizeof(myArr)/sizeof(myArr[0]);
+    printf("the number of arr is %d \n", number);
+    // the number of arr is 3 
+
+
+    // modify arr ele
+    myArr[2] = 4;
+
+    // we also can caculate the average value of the arr
+    int sum = 0;
+    for (int i = 0; i < number; i++)
+    {
+        sum += myArr[i];
+    }
+
+    float average_num = (float) sum / number;
+
+    printf("average_num == %.2f", average_num);
+
+    
+}
+
+void arr_basic_usage() {
+    /**
+     * There are two steps to create an array.
+     * 1. define the data type
+     * 2. specify the name of array followed by square brackets[]
+     */
+
+    int myArr[] = {1,2,3};
+    /**
+     * access the ele from arr
+     */
+    printf("index == 0, value ==  %d\n", myArr[0]);
+    printf("index == 1, value ==  %d\n", myArr[1]);
+    printf("index == 2, value ==  %d\n", myArr[2]);
+
+    /**
+     * NOTE:
+     *  all elements in array must be the same type.
+     */
 }
 
 void add_item_to_list(struct myList *list_p, int list_item) {
