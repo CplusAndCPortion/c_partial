@@ -2,17 +2,39 @@
 #include <string.h>
 
 
+void revision_char();
+
 void str_represention();
 
 void string_func();
 
+// void concatenate_string();
+
+void copy_string();
+
+
 int main() {
+
+    // revision_char();
 
     // str_represention();
 
-    string_func();
+    // string_func();
+
+    // concatenate_sting();
+
+    copy_string();
+
     return 0;
 }
+
+void revision_char() {
+    char c = 'A';
+    printf("%c",c);
+    printf("\n");
+    printf("%i",c); // the 'i' formatter sepcifier is equal to 'd'. the result represtends ASCII code
+}
+
 void string_func() {
 
     /*
@@ -58,4 +80,27 @@ void str_represention(){
    str2_len == 6
     */
 
+}
+
+void concatenate_string(){
+    char str1[20] = "Hello";
+    char str2[] = " world";
+
+    /*
+    Note that the size of `str1` should be large enough to store the result of the two strings combined (20 in our example).
+    */
+    strcat(str1, str2);
+
+    printf("str1 == %s\n", str1);
+    printf("str2 == %s\n", str2);
+}
+
+void copy_string() {
+    char str1[20] = "hello lingxiao";
+    char str2[20];
+    /*
+    char *strcpy(char *dst(destination), const char *src(source)) 
+     */
+    strcpy(str2,str1); // this will copy str1(source) to str2(destination)
+    printf("str2 == %s\n",str2);
 }

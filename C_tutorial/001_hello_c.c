@@ -53,11 +53,6 @@ void multidimensional_arr() {
     int out_arr[4][6] = {{1,2,3,4,5,6},{11,22,33,44,55,66},{111,222,333,444,555,666},{1,2,3,4,5,6}};
 
     printf("%lu",sizeof(out_arr));
-
-
-
-
-
 }
 
 void test_string() {

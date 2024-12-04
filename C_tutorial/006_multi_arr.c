@@ -51,8 +51,6 @@ void multi_dimension_arr() {
 
     printf("%d",arr[1][1]);
     // 5
-
-
 }
 
 void get_arr_size() {
